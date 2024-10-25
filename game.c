@@ -3,26 +3,26 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Function to implement the game
+
 int game(char you, char computer)
 {
-    // If both the user and computer have chosen the same thing
+    
     if (you == computer)
         return -1;
 
-    // If user's choice is stone and computer's choice is paper
+    
     if (you == 's' && computer == 'p')
         return 0;
     else if (you == 'p' && computer == 's') 
         return 1;
 
-    // If user's choice is stone and computer's choice is scissor
+    
     if (you == 's' && computer == 'z')
         return 1;
     else if (you == 'z' && computer == 's')
         return 0;
 
-    // If user's choice is paper and computer's choice is scissor
+    
     if (you == 'p' && computer == 'z')
         return 0;
     else if (you == 'z' && computer == 'p')
@@ -38,21 +38,21 @@ int main()
 
     printf("Welcome to Stone-Paper-Scissors game!\n");
 
-    // Loop for multiple rounds
+    
     while (1) {
         n = rand() % 100;
 
         if (n < 33)
-            computer = 's'; // Stone
+            computer = 's'; 
         else if (n >= 33 && n < 66)
-            computer = 'p'; // Paper
+            computer = 'p'; 
         else
-            computer = 'z'; // Scissor
+            computer = 'z'; 
 
         printf("\nEnter 's' for Stone, 'p' for Paper, 'z' for Scissor (or 'q' to quit): ");
         scanf(" %c", &you);
 
-        // Check if user wants to quit
+        
         if (you == 'q') {
             printf("\nGame Over!\nFinal Scores:\nPlayer: %d\nComputer: %d\n", player_score, computer_score);
             break;
